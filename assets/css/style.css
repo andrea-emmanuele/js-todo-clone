@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+input[type="text"] {
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+    background: #6EBBFF;
+    width: 80%;
+    padding: 5px 10px;
+    border: 2px solid #DEA549;
+    border-radius: 5rem;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    box-shadow: inset 0 0 0 2px #DEA549;
+}
+
+input[type="submit"],
+button {
+    width: 15%;
+    color: white;
+    text-align: center;
+    background-size: 200% auto;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 20px #eee;
+    display: block;
+    cursor: pointer;
+    transition: background-position .5s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-position: right center;
+}
+
+div.insert {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+div.insert > input[type="text"] {
+    font-size: 1.2rem;
+    width: 90%;
+    color: #000;
+    text-shadow: none;
+    background: #fff;
+    padding: 10px 16px;
+    border: 1px solid #6EBBFF;
+    border-radius: 5rem;
+}
+
+div.insert > input[type="submit"] {
+    font-size: 1rem;
+    padding: 12px 10px;
+}
+
+ul.to-do {
+    width: 100%;
+    list-style: none;
+    margin-left: 2rem;
+}
+
+ul.to-do > li {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+ul.to-do li > input[type="text"] {
+    width: 70%;
+}
+
+input[type="text"]:read-only {
+    background: none;
+    border: none;
+}
+
+ul.to-do li > input[type="text"]:focus {
+    box-shadow: none;
+}
+
+ul.to-do-template {
+    display: none;
+}
+
+input[type="submit"] {
+    background-image: linear-gradient(to right, #3CA55C 0%, #B5AC49  51%, #3CA55C  100%);
+}
+
+button.edit {
+    background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5  51%, #00d2ff  100%);
+}
+
+button.remove {
+    background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%)
+}
