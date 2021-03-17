@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do list</title>
+    <style>
+        .to-do-template {
+            display: none;
+        }
+
+        ul.to-do {
+            list-style: none;
+        }
+
+        ul.to-do > li {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="insert">
+        <input type="text" name="item" placeholder="Insert something to do">
+        <input type="submit" name="add-item" value="Add">
+    </div>
+    <ul class="to-do"></ul>
+
+    <div class="to-do-template">
+        <li>
+            <input type="text">
+            <button class="edit">Edit</button>
+            <button class="remove">Remove</button>
+        </li>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            let txt = $("input[name='item']");
+            let add = $("input[name='add-item']");
+            let itemTemplate;
+            let edit;
+            let remove;
+
+            add.click(function () {
+                itemTemplate = $("div.to-do-template > li").clone();
+                edit = itemTemplate.children("button.edit");
+                remove = itemTemplate.children("button.remove");
+
+                edit.click(function () {
+                    console.log("prova");
+                });
+
+                remove.click(function () {
+                    $(this).parent().remove();
+                });
+
+                $("ul.to-do").append(itemTemplate);
+            });
+        });
+    </script>
+</body>
+</html>
