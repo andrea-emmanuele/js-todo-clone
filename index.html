@@ -24,6 +24,7 @@
     </div>
     <ul class="to-do"></ul>
 
+    <!--li template-->
     <ul class="to-do-template">
         <li>
             <input class="to-do-txt" type="text" readonly>
@@ -46,7 +47,7 @@
             add.click(createItem);
 
             text.keyup(function (e) {
-                if (e.key == "Enter") {
+                if (e.key === "Enter") {
                     createItem();
                 }
             });
@@ -64,11 +65,17 @@
                         $(this).prev().prop("readonly", false);
                         $(this).prev().focus();
                         $(this).prev().focusout(function () {
-                            $(this).prop("readonly", "true");
+                            if ($(this).val())
+                                $(this).prop("readonly", "true");
+                            else
+                                $(this).parent().remove();
                         });
                         $(this).prev().keyup(function (e) {
-                            if (e.key == "Enter") {
-                                $(this).prop("readonly", "true");
+                            if (e.key === "Enter") {
+                                if ($(this).val())
+                                    $(this).prop("readonly", "true");
+                                else
+                                    $(this).parent().remove();
                             }
                         });
                     });
@@ -79,8 +86,8 @@
 
                     $("ul.to-do").append(itemTemplate);
                     text.val("");
-                    text.focus();
                 }
+                text.focus();
             }
         });
     </script>
